@@ -5,6 +5,7 @@ const btnStart = document.querySelector('.start')
 const image = document.querySelector('img')
 const buttons = document.querySelectorAll('button')
 const timer = document.querySelector('.timer')
+const title = document.querySelector('h2')
 
 const audioStart = new Audio('/assets/sounds/katon.mp3')
 const audioPause = new Audio('/assets/sounds/dattebayo.mp3')
@@ -17,18 +18,21 @@ btnFocus.addEventListener('click', () => {
     timeInSeconds = 1500
     changeTimer('focus')
     btnFocus.classList.add('focused')
+    title.innerHTML = 'Focus'
 })
 
 btnShort.addEventListener('click', () => {
     timeInSeconds = 300
     changeTimer('short-break')
     btnShort.classList.add('focused')
+    title.innerHTML = 'Short break'
 })
 
 btnLong.addEventListener('click', () => {
     timeInSeconds = 900
     changeTimer('long-break')
     btnLong.classList.add('focused')
+    title.innerHTML = 'Long break'
 })
 
 function changeTimer(status) {
